@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "6633a4dd56744c5ac3c96d55"
+  },
+  "code": "a143cbec-9805-4626-ac55-6c9b92435cb5",
+  "titre": "The Great Gatsby",
+  "description": "A story of the American Dream gone awry.",
+  "auteur": "F. Scott Fitzgerald",
+  "image": "..\\..\\uploads\\1714660573456-525630974-The_Great_Gatsby_Cover_1925_Retouched.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6633a5e28e70b8bd252376d1"
+  },
+  "code": "6d94719a-b4ed-4d32-a5ca-e911a025b0ca",
+  "titre": "To Kill a Mockingbird",
+  "description": "A tale of racial injustice and the power of moral growth.",
+  "auteur": "Harper Lee",
+  "image": "..\\..\\uploads\\1714660834037-301140427-828px-To_Kill_a_Mockingbird_(first_edition_cover).jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6633a71d8e70b8bd252376dc"
+  },
+  "code": "32fb7326-f367-443b-8b60-61206a0e3c38",
+  "titre": "1984",
+  "description": "A dystopian novel exploring totalitarian regimes and surveillance.",
+  "auteur": "George Orwell",
+  "image": "..\\..\\uploads\\1714661149259-368393608-images.jpeg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6633c17f8e70b8bd25237743"
+  },
+  "code": "f7944ed9-3f1c-4856-a9a7-8e8b2c045d11",
+  "titre": "Pride and Prejudice",
+  "description": "A classic romance novel by Jane Austen.",
+  "auteur": "Jane Austen",
+  "image": "..\\..\\uploads\\1714667903620-683221897-lol.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6633c1d88e70b8bd25237747"
+  },
+  "code": "04e63f54-bb32-4cc9-8f27-2a3cfe5aeb7b",
+  "titre": "The Catcher in the Rye",
+  "description": "A coming-of-age novel by J.D. Salinger.",
+  "auteur": "J.D. Salinger",
+  "image": "..\\..\\uploads\\1714667992336-17073639-download.png",
+  "__v": 0
+}]

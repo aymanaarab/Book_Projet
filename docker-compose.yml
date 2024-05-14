@@ -1,0 +1,87 @@
+version: "3.8"
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - 15672:15672
+      - 5672:5672
+  nginx:
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+      - ./nginx.config:/etc/nginx/conf.d/default.conf
+      - ./certs:/etc/nginx/certs
+    depends_on:
+      - client
+      - book
+      - loan
+      - notification
+  client:
+    build: ./backend/client
+    ports:
+      - 3001:3000
+    environment:
+      - PORT=3001
+    depends_on:
+      - rabbitmq
+      - db_client
+  book:
+    build: ./backend/book
+    ports:
+      - 3000:3000
+    environment:
+      - PORT=3000
+    depends_on:
+      - rabbitmq
+      - db_book
+  loan:
+    build: ./backend/loan
+    ports:
+      - 3002:3000
+    environment:
+      - PORT=3002
+    depends_on:
+      - rabbitmq
+      - db_loan
+  notification:
+    build: ./backend/notification
+    ports:
+      - 3003:3000
+    environment:
+      - PORT=3003
+    depends_on:
+      - rabbitmq
+  db_client:
+    image: mongo
+    ports:
+      - 30000:27017
+    environment:
+      - MONGODB=mongodb://localhost:27017
+    volumes:
+      - ./backend/client/db:/data/db
+  db_book:
+    image: mongo
+    ports:
+      - 30001:27017
+    environment:
+      - MONGODB=mongodb://localhost:27017
+    volumes:
+      - ./backend/book/db:/data/db
+  db_loan:
+    image: mongo
+    ports:
+      - 30002:27017
+    environment:
+      - MONGODB=mongodb://localhost:27017
+    volumes:
+      - ./backend/loan/db:/data/db
+  frontend:
+    build: ./frontend
+    ports:
+      - 5173:5173
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - nginx

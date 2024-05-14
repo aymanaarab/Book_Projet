@@ -1,0 +1,27 @@
+# Node modules
+node_modules
+
+# Environment variables
+.env
+
+# Compiled output
+/build
+/.next
+/out
+
+# IDE/Text Editor specific files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Dependency directories
+/pnpm-debug.log
+/yarn-error.log
+
+# Optional: OS generated files
+.DS_Store
+Thumbs.db
