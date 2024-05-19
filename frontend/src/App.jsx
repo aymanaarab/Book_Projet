@@ -7,6 +7,7 @@ import Book from "./pages/book";
 import Loans from "./pages/loans";
 import Homepage from "./pages/HomePage";
 import AdminDashboard from "./admin/AdminDashboard";
+import Booksa from "./pages/Booksa";
 
 function App() {
   return (
@@ -14,13 +15,18 @@ function App() {
       <BrowserRouter>
         <Routes>
           {/* <Route path="/" element={<Home />}></Route> */}
-          <Route path="/admin" element={<AdminDashboard />}></Route>
-          <Route path="/" element={<Homepage />}></Route>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/sign-in" element={<Signin />}></Route>
-          <Route path="/books" element={<Books />}></Route>
-          <Route path="/books/:id" element={<Book />}></Route>
-          <Route path="/mylibrary" element={<Loans />}></Route>
+          <Route path="/admin" element={<AdminDashboard />}>
+          <Route path="booksa" element={<Booksa />}>
+
+          </Route>
+
+          </Route>
+          <Route path="/" element={<Homepage />}/>
+          <Route path="/login" element={<Login />}/>
+          <Route path="/sign-in" element={<Signin />}/>
+          <Route path="/books" element={<Books />}/>
+          <Route path="/books/:id" element={<Book />}/>
+          <Route path="/mylibrary" element={<Loans />}/>
 
         </Routes>
       </BrowserRouter>
