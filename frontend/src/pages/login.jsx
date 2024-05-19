@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, redirect, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../features/User";
 
@@ -9,10 +9,13 @@ export default function Login() {
   const loginStatus = useSelector((state) => state.auth.status);
   const loginError = useSelector((state) => state.auth.error);
   const token = useSelector((state) => state.auth.token);
+  const isAdmin = useSelector((state) => state.auth.isAdmin);
+
+
 
   useEffect(() => {
-    if (token) {
-      navigate("/");
+    if (token && isAdmin ) {
+      redirect("/admin")
     }
   }, []);
 
@@ -34,8 +37,8 @@ export default function Login() {
   };
 
   useEffect(() => {
-    if (token) {
-      navigate("/");
+    if (token && isAdmin) {
+      navigate("/admin");
     }
   }, [dispatch, token]);
 

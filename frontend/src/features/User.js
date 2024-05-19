@@ -41,6 +41,7 @@ export const loginUser = createAsyncThunk(
           },
         }
       );
+      console.log(response.data)
       return response.data;
     } catch (error) {
       console.error(error);
@@ -57,6 +58,7 @@ const authSlice = createSlice({
       state.userId = null;
       state.token = null;
       state.status = "idle";
+      state.isAdmin = null;
       state.error = null;
       localStorage.removeItem("userId");
       localStorage.removeItem("token");
@@ -83,6 +85,7 @@ const authSlice = createSlice({
         state.userId = action.payload.id;
         state.token = action.payload.token;
         state.error = "";
+        state.isAdmin = action.payload.isAdmin;
         localStorage.setItem("userId", action.payload.id);
         localStorage.setItem("token", action.payload.token);
       })

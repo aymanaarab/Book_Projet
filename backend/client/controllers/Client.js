@@ -55,7 +55,8 @@ export const loginUser = async (req, res) => {
     // Generate token
     const token = jwt.sign({ id: user._id }, "secretkey", { expiresIn: "3d" });
     const id = user._id;
-    res.json({ token, id });
+    const isAdmin = user.isAdmin
+    res.json({ token, id , isAdmin});
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server error" });
@@ -87,20 +88,7 @@ export const getClientById = async (req, res) => {
   }
 };
 
-// export const addClient = async (req, res) => {
-//   try {
-//     let jsonRes = { message: "success", data: null };
-//     const client = req.body;
-//     const newClient = await Client.create(client);
 
-//     const messageContent = JSON.stringify(newClient);
-//     await sendMessageToQueue("addedClient", messageContent);
-//     // jsonRes.data = newClient;
-//     res.status(202).json(jsonRes.message);
-//   } catch (err) {
-//     return res.status(500).json({ message: err.message });
-//   }
-// };
 
 export const updateClient = async (req, res) => {
   try {
