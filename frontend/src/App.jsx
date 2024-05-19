@@ -5,13 +5,15 @@ import Home from "./pages/home";
 import Books from "./pages/books";
 import Book from "./pages/book";
 import Loans from "./pages/loans";
+import Homepage from "./pages/HomePage";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          {/* <Route path="/" element={<Home />}></Route> */}
+          <Route path="/" element={<Homepage />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/sign-in" element={<Signin />}></Route>
           <Route path="/books" element={<Books />}></Route>
