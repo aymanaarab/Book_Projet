@@ -2,31 +2,28 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { setAllBooks } from "../features/Books";
 import { NavLink } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-export default function Booksa() {
+export default function Loansa() {
   const dispatch = useDispatch();
   const token = useSelector((state) => state.auth.token) || null;
   const books = useSelector((state) => state.books.allbooks) || [];
 
+  const [loans, setloans] = useState([]);
   useEffect(() => {
-    async function getBooks() {
+    async function getLoans() {
       const config = {
         headers: {
           Authorization: token,
         },
       };
-      const response = await axios.get("http://127.0.0.1:3000/api/", config);
-      return response.data.data;
+      const response = await axios.get("http://127.0.0.1:3002/api/", config);
+      setloans(response.data.data);
     }
 
-    getBooks().then((data) => dispatch(setAllBooks(data)));
+    getLoans();
   }, []);
-
-  useEffect(() => {
-    console.log(books);
-  }, [books]);
-
+  console.log(loans)
   return (
     <div>
       <div>
@@ -37,26 +34,19 @@ export default function Booksa() {
 
       <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <tr>
-          <th>id</th>
-          <th>name</th>
-          <th>image</th>
+          <th>bookId</th>
+          <th>clientId</th>
+          <th>dateretour</th>
+          <th>dateEmprunt</th>
           <th>actions</th>
         </tr>
         <tbody>
-          {books.map((b, i) => (
+          {loans.map((b, i) => (
             <tr key={b._id} className="p-10">
-              <td>{i + 1}</td>
-              <td>{b.titre}</td>
-              <td>
-                <img
-                  src={b.image}
-                  alt=""
-                  style={{
-                    height: "40px",
-                    width: "50px",
-                  }}
-                />
-              </td>
+              <td>{b.book}</td>
+              <td>{b.client}</td>
+              <td>{b.dateRetour}</td>
+              <td>{b.dateEmprunt}</td>
               <td>
                 <NavLink to={"edit"}>edit </NavLink>
                 <NavLink to={"delete"}> delete</NavLink>

@@ -2,30 +2,30 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { setAllBooks } from "../features/Books";
 import { NavLink } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-export default function Booksa() {
+export default function Usersa() {
   const dispatch = useDispatch();
   const token = useSelector((state) => state.auth.token) || null;
-  const books = useSelector((state) => state.books.allbooks) || [];
-
+  //   const books = useSelector((state) => state.books.allbooks) || [];
+  const [users, setsusers] = useState([]);
   useEffect(() => {
-    async function getBooks() {
+    async function getClients() {
       const config = {
         headers: {
           Authorization: token,
         },
       };
-      const response = await axios.get("http://127.0.0.1:3000/api/", config);
-      return response.data.data;
+      const response = await axios.get("http://127.0.0.1:3001/api/", config);
+      setsusers(response.data.data);
     }
 
-    getBooks().then((data) => dispatch(setAllBooks(data)));
+    getClients();
   }, []);
 
-  useEffect(() => {
-    console.log(books);
-  }, [books]);
+  //   useEffect(() => {
+  //     console.log(books);
+  //   }, [books]);
 
   return (
     <div>
@@ -39,24 +39,17 @@ export default function Booksa() {
         <tr>
           <th>id</th>
           <th>name</th>
-          <th>image</th>
+          <th>lastname</th>
+          <th>email</th>
           <th>actions</th>
         </tr>
         <tbody>
-          {books.map((b, i) => (
+          {users.map((b, i) => (
             <tr key={b._id} className="p-10">
               <td>{i + 1}</td>
-              <td>{b.titre}</td>
-              <td>
-                <img
-                  src={b.image}
-                  alt=""
-                  style={{
-                    height: "40px",
-                    width: "50px",
-                  }}
-                />
-              </td>
+              <td>{b.nom}</td>
+              <td>{b.prénom}</td>
+              <td>{b.email}</td>
               <td>
                 <NavLink to={"edit"}>edit </NavLink>
                 <NavLink to={"delete"}> delete</NavLink>

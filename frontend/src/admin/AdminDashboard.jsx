@@ -16,7 +16,7 @@ const AdminDashboard = () => {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
   return (
-    <Layout>
+    <Layout className='w-screen h-screen'>
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="demo-logo-vertical" />
         <Menu
@@ -67,6 +67,7 @@ const AdminDashboard = () => {
             minHeight: 280,
             background: colorBgContainer,
             borderRadius: borderRadiusLG,
+
           }}
         >
           <br />

@@ -4,7 +4,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 // import { useDispatch, useSelector } from "react-redux";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../features/User";
 
 export default function Homepage() {
@@ -14,7 +14,7 @@ export default function Homepage() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+ 
   const Logout = () => {
     dispatch(logoutUser());
     navigate("/login");
@@ -55,6 +55,17 @@ export default function Homepage() {
 }
 
 function PageNav({logout}) {
+  const token = useSelector((state) => state.auth.token);
+  const isAdmin = useSelector((state) => state.auth.isAdmin);
+  const dispatch = useDispatch();
+
+// Function to handle logout
+const handleLogout = () => {
+  dispatch(logoutUser());
+};
+
+ 
+
   return (
     <nav className={styles.nav}>
       <Logo  />
@@ -62,12 +73,20 @@ function PageNav({logout}) {
       
         <li>
         
-        <button
+       {token && isAdmin===false ? <button
         className="bg-indigo-400 text-white px-4 py-4 w-60 rounded-md text-pretty font-extrabold"
         onClick={logout}
       >
         Login
-      </button>
+      </button> : 
+      <button
+      className="bg-indigo-400 text-white px-4 py-4 w-60 rounded-md text-pretty font-extrabold"
+      onClick={logout}
+    >
+      Logout
+    </button>
+      
+      }
         </li>
       </ul>
     </nav>
