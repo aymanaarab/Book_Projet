@@ -28,36 +28,42 @@ export default function Usersa() {
   //   }, [books]);
 
   return (
-    <div>
-      <div>
-        <button className="p-2 bg-blue-400 rounded mr-auto">
-          <NavLink to={"add-book"}>+</NavLink>
-        </button>
-      </div>
-
-      <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <tr>
-          <th>id</th>
-          <th>name</th>
-          <th>lastname</th>
-          <th>email</th>
-          <th>actions</th>
-        </tr>
+    <div className="container mx-auto p-4">
+    <div className="flex justify-end mb-4">
+      <button className="p-2 bg-blue-400 rounded">
+        <NavLink to="add-book" className="text-white font-bold">+</NavLink>
+      </button>
+    </div>
+  
+    <div className="overflow-x-auto">
+      <table className="min-w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead className="bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-400">
+          <tr>
+            <th scope="col" className="px-6 py-3">ID</th>
+            <th scope="col" className="px-6 py-3">Name</th>
+            <th scope="col" className="px-6 py-3">Last Name</th>
+            <th scope="col" className="px-6 py-3">Email</th>
+            <th scope="col" className="px-6 py-3">Actions</th>
+          </tr>
+        </thead>
         <tbody>
           {users.map((b, i) => (
-            <tr key={b._id} className="p-10">
-              <td>{i + 1}</td>
-              <td>{b.nom}</td>
-              <td>{b.prénom}</td>
-              <td>{b.email}</td>
-              <td>
-                <NavLink to={"edit"}>edit </NavLink>
-                <NavLink to={"delete"}> delete</NavLink>
+            <tr key={b._id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+              <td className="px-6 py-4">{i + 1}</td>
+              <td className="px-6 py-4">{b.nom}</td>
+              <td className="px-6 py-4">{b.prénom}</td>
+              <td className="px-6 py-4">{b.email}</td>
+              <td className="px-6 py-4">
+                <NavLink to="edit" className="text-blue-500 hover:underline mr-2">Edit</NavLink>
+                <NavLink to="delete" className="text-red-500 hover:underline">Delete</NavLink>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
+  </div>
+  
+  
   );
 }
