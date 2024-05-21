@@ -11,8 +11,8 @@ export default function BooksGrid2({ books }) {
                     <div class="content">
                         <div class="back">
                             <div class="back-content">
-                                <img src={book.image} alt="" height="120px" width="120px" />
-                                <strong>{book.titre}</strong>
+                                <img src={book?.image} alt="" height="120px" width="120px" />
+                                <strong>{book?.titre}</strong>
                             </div>
                         </div>
 
@@ -29,7 +29,7 @@ export default function BooksGrid2({ books }) {
 
                             <div class="front-content">
                                 <small class="badge">description</small>
-                                <strong>{book.description}</strong>
+                                <strong>{book?.description}</strong>
                                 <Link to={`/books/${book._id}`}>
                                     <button className="bttn">
                                         more info

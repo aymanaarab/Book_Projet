@@ -103,14 +103,14 @@ export default function Book() {
       >
         <div className="w-96 p-2 h-auto flex items-center justify-center  bg-gray-200">
           <img
-            src={book.image}
+            src={book?.image}
             alt=""
             className="max-h-full max-w-full object-cover"
           />
         </div>
         <div className="flex flex-col p-4">
-          <h1 className="text-3xl font-bold mb-4">{book.titre}</h1>
-          <p className="text-gray-700 mb-4">{book.description}</p>
+          <h1 className="text-3xl font-bold mb-4">{book?.titre}</h1>
+          <p className="text-gray-700 mb-4">{book?.description}</p>
           {!loaned ? (
             <button
               className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"

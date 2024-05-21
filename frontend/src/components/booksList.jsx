@@ -7,8 +7,8 @@ export default function BooksList({ books }) {
         {books.map((book) => (
           <li key={book._id} className="py-2">
             <div className="flex items-center justify-between">
-              <span className="font-semibold">{book.titre}</span>
-              <span className="font-semibold">{book.description}</span>
+              <span className="font-semibold">{book?.titre}</span>
+              <span className="font-semibold">{book?.description}</span>
             </div>
           </li>
         ))}

@@ -18,9 +18,9 @@ export default function BooksGrid({ books }) {
           </div>
           <div className="p-4">
             <h2 className="text-xl font-medium mb-2 text-indigo-500">
-              {book.titre}
+              {book?.titre}
             </h2>
-            <p className="text-gray-600">{book.description}</p>
+            <p className="text-gray-600">{book?.description}</p>
           </div>
           <Link to={`/books/${book._id}`}>
             <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4  w-full ">
