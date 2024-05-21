@@ -1,0 +1,123 @@
+/* File: /src/pages/Login.css */
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #f0f4f8;
+    color: #333;
+  }
+  
+  .login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e0e7ff;
+    padding: 20px;
+  }
+  
+  .login-card {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .login-title {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #4f46e5;
+  }
+  
+  .login-subtitle {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #6b7280;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .form-input {
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #f9fafb;
+    font-size: 14px;
+    color: #333;
+    transition: background 0.3s, border 0.3s;
+  }
+  
+  .form-input:focus {
+    background: #ffffff;
+    outline: none;
+    border: 1px solid #4f46e5;
+  }
+  
+  .form-remember {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .form-checkbox {
+    margin-right: 10px;
+  }
+  
+  .form-link {
+    color: #4f46e5;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .form-link:hover {
+    color: #333;
+  }
+  
+  .form-button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #4f46e5;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  .form-button:hover {
+    background: #4338ca;
+    transform: scale(1.05);
+  }
+  
+  .login-footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #6b7280;
+  }
+  
+  .login-footer .login-link {
+    color: #4f46e5;
+  }
+  
+  .login-footer .login-link:hover {
+    color: #333;
+  }

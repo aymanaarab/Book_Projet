@@ -3,7 +3,7 @@ import { Header } from "../components/header";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { setAllBooks } from "../features/Books";
-import BooksGrid from "../components/booksGrid";
+import BooksGrid2 from "../components/booksGrid2";
 
 export default function Books() {
   const dispatch = useDispatch();
@@ -31,7 +31,7 @@ export default function Books() {
   return (
     <div>
       <Header />
-      <BooksGrid books={books} />
+      <BooksGrid2 books={books} />
     </div>
   );
 }
