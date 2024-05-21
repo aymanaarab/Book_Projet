@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import  { useState } from "react";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
-  UploadOutlined,
-  BookOutlined ,
-  DollarOutlined ,
+  BookOutlined,
+  DollarOutlined,
   UserOutlined,
-} from '@ant-design/icons';
-import { Button, Layout, Menu, theme } from 'antd';
-import { NavLink, Outlet } from 'react-router-dom';
+} from "@ant-design/icons";
+import { Button, Layout, Menu, theme } from "antd";
+import { NavLink, Outlet } from "react-router-dom";
 const { Header, Sider, Content } = Layout;
 const AdminDashboard = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -16,26 +15,26 @@ const AdminDashboard = () => {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
   return (
-    <Layout className='w-screen h-screen'>
+    <Layout className="w-screen h-screen">
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="demo-logo-vertical" />
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={['1']}
+          defaultSelectedKeys={["1"]}
           items={[
             {
-              key: '1',
+              key: "1",
               icon: <BookOutlined />,
               label: <NavLink to={"booksa"}> Books</NavLink>,
             },
             {
-              key: '2',
+              key: "2",
               icon: <UserOutlined />,
               label: <NavLink to={"usersa"}> Users</NavLink>,
             },
             {
-              key: '3',
+              key: "3",
               icon: <DollarOutlined />,
               label: <NavLink to={"loansa"}> Loans</NavLink>,
             },
@@ -54,7 +53,7 @@ const AdminDashboard = () => {
             icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
             onClick={() => setCollapsed(!collapsed)}
             style={{
-              fontSize: '16px',
+              fontSize: "16px",
               width: 64,
               height: 64,
             }}
@@ -62,16 +61,15 @@ const AdminDashboard = () => {
         </Header>
         <Content
           style={{
-            margin: '24px 16px',
+            margin: "24px 16px",
             padding: 24,
             minHeight: 280,
             background: colorBgContainer,
             borderRadius: borderRadiusLG,
-
           }}
         >
           <br />
-          <Outlet/>
+          <Outlet />
         </Content>
       </Layout>
     </Layout>
