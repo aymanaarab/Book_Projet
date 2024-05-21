@@ -59,7 +59,7 @@ const AddLoan = () => {
     </div>
     <div className="mb-4">
       <label htmlFor="author" className="block text-gray-700 font-bold mb-2">
-        Author:
+        Client:
       </label>
       <input
         type="text"
@@ -72,32 +72,16 @@ const AddLoan = () => {
     </div>
     <div className="mb-4">
       <label htmlFor="description" className="block text-gray-700 font-bold mb-2">
-        Description:
+        Retour Date:
       </label>
-      <textarea
-        id="description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-        required
-        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-      />
+     <input type="date" />
     </div>
-    <div className="mb-4">
-      <label htmlFor="image" className="block text-gray-700 font-bold mb-2">
-        Image:
-      </label>
-      <input
-        type="file"
-        id="image"
-        onChange={(e) => setImage(e.target.files[0])}
-        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-      />
-    </div>
+  
     <button
       type="submit"
       className="w-full bg-indigo-500 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
     >
-      Add Book
+      Add Loan
     </button>
   </form>
   

@@ -25,7 +25,7 @@ export const Header = () => {
           <Link to="/books">Books</Link>
         </li>
         <li className="hover:underline  text-black">
-          <Link to="/mylibrary">Your Library</Link>
+          <Link to="/mylibrary">Your loans</Link>
         </li>
       </ul>
       <button
