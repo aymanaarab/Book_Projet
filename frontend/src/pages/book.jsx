@@ -5,6 +5,8 @@ import { setSelectedBook } from "../features/Books";
 import axios from "axios";
 import { Header } from "../components/header";
 
+import { Link } from "react-router-dom";
+
 export default function Book() {
   let { id } = useParams();
   const dispatch = useDispatch();
@@ -126,6 +128,8 @@ export default function Book() {
               return book
             </button>
           )}
+          <br /><br />
+      <Link to="/books" className=" text-indigo-500 font-bold rounded" >return back</Link>
         </div>
       </div>
     </div>
