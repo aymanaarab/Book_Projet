@@ -3,11 +3,17 @@ import axios from "axios";
 import { setAllBooks } from "../features/Books";
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
+import { Button, Popconfirm, message } from "antd";
+import { QuestionCircleOutlined } from "@ant-design/icons";
+
 
 export default function Booksa() {
   const dispatch = useDispatch();
   const token = useSelector((state) => state.auth.token) || null;
   const books = useSelector((state) => state.books.allbooks) || [];
+  const confirm = (e) => {
+    message.success("تمت الحدف بنجاح");
+  };
 
   useEffect(() => {
     async function getBooks() {
@@ -27,11 +33,36 @@ export default function Booksa() {
     console.log(books);
   }, [books]);
 
+  async function deleteBook(id) {
+    const config = {
+      headers: {
+        Authorization: token,
+      },
+    };
+  
+    try {
+      await axios.delete(`http://127.0.0.1:3000/api/delete-book/${id}`, config);
+      // If the delete operation is successful, return a success message or any other relevant information
+      return { message: 'Book deleted successfully' };
+    } catch (error) {
+      console.error('Error deleting book:', error);
+      if (error.response && error.response.data && error.response.data.message) {
+        // If the server provides an error message, throw that
+        throw new Error(error.response.data.message);
+      } else {
+        // Otherwise, throw a generic error message
+        throw new Error('An error occurred while deleting the book');
+      }
+      
+    }
+  }
+    
+  
   return (
     <div className="container mx-auto p-4">
       <div className="flex justify-end mb-4">
         <button className="p-2 bg-blue-400 rounded">
-          <NavLink to={"add-book"} className="text-white font-bold">
+          <NavLink to={"/admin/add-book"} className="text-white font-bold">
             +
           </NavLink>
         </button>
@@ -72,17 +103,28 @@ export default function Booksa() {
                 </td>
                 <td className="px-6 py-4">
                   <NavLink
-                    to={"edit"}
+                    to={`/admin/edit-book/${b._id}`}
                     className="text-blue-500 hover:underline mr-2"
                   >
                     Edit
                   </NavLink>
-                  <NavLink
-                    to={"delete"}
+
+                  <Popconfirm
+                    title="delete "
+                    description="are you sure?"
+                    cancelText="cancel"
+                    okText="delete"
+                    onConfirm={() => deleteBook(b?._id)}
+                    okType="danger"
+                    icon={<QuestionCircleOutlined style={{ color: "red" }} />}
+                  >
+                  <button
                     className="text-red-500 hover:underline"
                   >
                     Delete
-                  </NavLink>
+                  </button>
+                  
+                  </Popconfirm>
                 </td>
               </tr>
             ))}

@@ -9,6 +9,12 @@ import AdminDashboard from "./admin/AdminDashboard";
 import Booksa from "./pages/Booksa";
 import Loansa from "./pages/Loansa";
 import Usersa from "./pages/Usersa";
+import AddBook from "./pages/AddBook";
+import AddUser from "./pages/AddUser";
+import AddLoan from "./pages/AddLoan";
+import EditBook from "./pages/EditBook";
+import EditUser from "./pages/EditUser";
+import EditLoan from "./pages/EditLoan";
 
 function App() {
   return (
@@ -20,9 +26,15 @@ function App() {
             <Route path="booksa" element={<Booksa />} />
             <Route path="loansa" element={<Loansa />} />
             <Route path="usersa" element={<Usersa />} />
+            <Route path="add-book" element={<AddBook />} />
+            <Route path="add-user" element={<AddUser />} />
+            <Route path="add-loan" element={<AddLoan />} />
+            <Route path="edit-book/:id" element={<EditBook />} />
+            <Route path="edit-user/:id" element={<EditUser />} />
+            <Route path="edit-loan/:id" element={<EditLoan />} />
+
           </Route>
           <Route path="/" element={<Homepage />} />
-          <Route path="/booksa" element={<Booksa />} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign-in" element={<Signin />} />
           <Route path="/books" element={<Books />} />

@@ -4,6 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../features/User";
+import axios from "axios";
 
 export default function Homepage() {
   useEffect(() => {
@@ -45,26 +46,45 @@ function PageNav({ logout }) {
   const token = useSelector((state) => state.auth.token);
   const isAdmin = useSelector((state) => state.auth.isAdmin);
 
+
+  const logoutUser = async () => {
+    try {
+      const token = localStorage.getItem('token');
+  
+      await axios.post('http://127.0.0.1:3001/api/logout_User', null, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+  
+      localStorage.removeItem('token');
+  
+      window.location.href = '/';
+    } catch (error) {
+      console.error('Error logging out:', error);
+    }
+  };
+
   return (
     <nav className="flex items-center justify-between">
       <Logo />
       <ul className="list-none flex items-center gap-16">
         <li>
-          {token && !isAdmin ? (
+          {token && !isAdmin && 
             <button
               className="bg-indigo-400 text-white px-4 py-2 rounded-md font-extrabold"
-              onClick={logout}
+              onClick={logoutUser}
             >
               Logout
             </button>
-          ) : (
-            <button
-              className="bg-indigo-400 text-white px-4 py-2 rounded-md font-extrabold"
-              onClick={logout}
-            >
-              Login
-            </button>
-          )}
+} 
+          {!token &&  <button
+            className="bg-indigo-400 text-white px-4 py-2 rounded-md font-extrabold"
+            onClick={logout}
+          >
+            Login
+          </button>}  
+          
         </li>
       </ul>
     </nav>

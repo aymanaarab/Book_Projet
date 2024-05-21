@@ -8,9 +8,32 @@ import {
 } from "@ant-design/icons";
 import { Button, Layout, Menu, theme } from "antd";
 import { NavLink, Outlet } from "react-router-dom";
+import { useSelector } from "react-redux";
+import axios from "axios";
 const { Header, Sider, Content } = Layout;
 const AdminDashboard = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const token = useSelector((state) => state.auth.token);
+  const isAdmin = useSelector((state) => state.auth.isAdmin);
+
+  const logoutUser = async () => {
+    try {
+      const token = localStorage.getItem('token');
+  
+      await axios.post('http://127.0.0.1:3001/api/logout_User', null, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+  
+      localStorage.removeItem('token');
+  
+      window.location.href = '/';
+    } catch (error) {
+      console.error('Error logging out:', error);
+    }
+  };
+
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -40,6 +63,9 @@ const AdminDashboard = () => {
             },
           ]}
         />
+
+<button className="p-4 bg-cyan-600 text-white rounded-ee-full absolute bottom-0 " onClick={logoutUser}>logout</button>
+
       </Sider>
       <Layout>
         <Header

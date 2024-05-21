@@ -5,6 +5,7 @@ import {
   getClientById,
   getClients,
   loginUser,
+  logout_User,
   registerUser,
   updateClient,
 } from "../controllers/Client.js";
@@ -20,5 +21,6 @@ route.get("/emails", getAllClientsEmails);
 route.get("/:id", getClientById);
 route.put("/update-client/:id", authMiddleware, updateClient);
 route.delete("/delete-client/:id", authMiddleware, deleteClient);
+route.post("/logout_User",logout_User);
 
 export default route;

@@ -63,6 +63,14 @@ export const loginUser = async (req, res) => {
   }
 };
 
+export const  logout_User = async(req, res) => {
+  
+  const token = req.headers.authorization.split(' ')[1];
+  const decodedToken = jwt.verify(token, 'secretkey');
+  const newToken = jwt.sign({ userId: decodedToken.userId }, 'secretkey', { expiresIn: '0s' });
+  res.json({ token: newToken });
+} 
+
 export const getClients = async (req, res) => {
   try {
     let clients = await Client.find();
