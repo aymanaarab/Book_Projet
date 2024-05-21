@@ -99,39 +99,40 @@ export default function Book() {
   return (
     <div className="flex flex-col max-h-screen">
       <Header />
-      <div
-        className="flex flex-auto
-      "
-      >
-        <div className="w-96 p-2 h-auto flex items-center justify-center  bg-gray-200">
-          <img
-            src={book?.image}
-            alt=""
-            className="max-h-full max-w-full object-cover"
-          />
-        </div>
-        <div className="flex flex-col p-4">
-          <h1 className="text-3xl font-bold mb-4">{book?.titre}</h1>
-          <p className="text-gray-700 mb-4">{book?.description}</p>
-          {!loaned ? (
-            <button
-              className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
-              onClick={add}
-            >
-              Add to Library
-            </button>
-          ) : (
-            <button
-              className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
-              onClick={returnBook}
-            >
-              return book
-            </button>
-          )}
-          <br /><br />
-      <Link to="/books" className=" text-indigo-500 font-bold rounded" >return back</Link>
-        </div>
-      </div>
+      <div className="flex flex-wrap justify-center p-6">
+  <div className="w-full md:w-1/3 p-4 bg-gray-200 flex items-center justify-center">
+    <img
+      src={book?.image}
+      alt={book?.titre}
+      className="max-h-96 max-w-full object-cover"
+    />
+  </div>
+  <div className="w-full md:w-2/3 p-4 flex flex-col">
+    <h1 className="text-4xl font-bold mb-4">{book?.titre}</h1>
+    <p className="text-gray-700 mb-6">{book?.description}</p>
+    <div className="flex items-center mb-6">
+      {!loaned ? (
+        <button
+          className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded mr-4"
+          onClick={add}
+        >
+          Add to Library
+        </button>
+      ) : (
+        <button
+          className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded mr-4"
+          onClick={returnBook}
+        >
+          Return Book
+        </button>
+      )}
     </div>
+    <Link to="/books" className="text-indigo-500 font-bold underline">
+      Return Back
+    </Link>
+  </div>
+</div>
+</div>
+
   );
 }
