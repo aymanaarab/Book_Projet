@@ -20,9 +20,7 @@ export const Header = () => {
       </Link>
       </div>
       <ul className="flex gap-6 text-black text-2xl">
-        <li className="hover:underline">
-          <Link to="/">Home</Link>
-        </li>
+    
         <li className="hover:underline  text-black">
           <Link to="/books">Books</Link>
         </li>

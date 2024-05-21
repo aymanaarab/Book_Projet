@@ -1,0 +1,100 @@
+[{
+  "_id": "6633c1d88e70b8bd25237758",
+  "ObjectId": "04e63f54-bb32-4cc9-8f27-2a3cfe5aeb86",
+  "code": "b23e4567-e89b-12d3-a456-426614174010",
+  "titre": "ألف ليلة وليلة",
+  "description": "مجموعة من القصص الشعبية من الشرق الأوسط وجنوب آسيا.",
+  "auteur": "مجهول",
+  "image": "..\\..\\uploads\\1.png",
+  "__v": 0
+},
+{
+  "_id": "6633c1d88e70b8bd25237759",
+  "ObjectId": "04e63f54-bb32-4cc9-8f27-2a3cfe5aeb87",
+  "code": "c23e4567-e89b-12d3-a456-426614174011",
+  "titre": "رجال في الشمس",
+  "description": "رواية للكاتب الفلسطيني غسان كنفاني.",
+  "auteur": "غسان كنفاني",
+  "image": "..\\..\\uploads\\2.png",
+  "__v": 0
+},
+{
+  "_id": "6633c1d88e70b8bd25237760",
+  "ObjectId": "04e63f54-bb32-4cc9-8f27-2a3cfe5aeb88",
+  "code": "d23e4567-e89b-12d3-a456-426614174012",
+  "titre": "زقاق المدق",
+  "description": "رواية للكاتب المصري نجيب محفوظ.",
+  "auteur": "نجيب محفوظ",
+  "image": "..\\..\\uploads\\zqaq_al_madaq.png",
+  "__v": 0
+},
+{
+  "_id": "6633c1d88e70b8bd25237761",
+  "ObjectId": "04e63f54-bb32-4cc9-8f27-2a3cfe5aeb89",
+  "code": "e23e4567-e89b-12d3-a456-426614174013",
+  "titre": "موسم الهجرة إلى الشمال",
+  "description": "رواية للكاتب السوداني الطيب صالح.",
+  "auteur": "الطيب صالح",
+  "image": "..\\..\\uploads\\mawsim_alhijra_ila_alshamal.png",
+  "__v": 0
+},
+{
+  "_id": "6633c1d88e70b8bd25237762",
+  "ObjectId": "04e63f54-bb32-4cc9-8f27-2a3cfe5aeb90",
+  "code": "f23e4567-e89b-12d3-a456-426614174014",
+  "titre": "الخبز الحافي",
+  "description": "رواية للكاتب المغربي محمد شكري.",
+  "auteur": "محمد شكري",
+  "image": "..\\..\\uploads\\alkhubz_alhafi.png",
+  "__v": 0
+},
+{
+  "_id": "6633c1d88e70b8bd25237763",
+  "ObjectId": "04e63f54-bb32-4cc9-8f27-2a3cfe5aeb91",
+  "code": "g23e4567-e89b-12d3-a456-426614174015",
+  "titre": "كليلة ودمنة",
+  "description": "مجموعة من القصص والحكايات لأبن المقفع.",
+  "auteur": "ابن المقفع",
+  "image": "..\\..\\uploads\\kalila_wa_dimna.png",
+  "__v": 0
+},
+{
+  "_id": "6633c1d88e70b8bd25237764",
+  "ObjectId": "04e63f54-bb32-4cc9-8f27-2a3cfe5aeb92",
+  "code": "h23e4567-e89b-12d3-a456-426614174016",
+  "titre": "حي بن يقظان",
+  "description": "رواية فلسفية كتبها ابن طفيل.",
+  "auteur": "ابن طفيل",
+  "image": "..\\..\\uploads\\hayy_ibn_yaqzan.png",
+  "__v": 0
+},
+{
+  "_id": "6633c1d88e70b8bd25237765",
+  "ObjectId": "04e63f54-bb32-4cc9-8f27-2a3cfe5aeb93",
+  "code": "i23e4567-e89b-12d3-a456-426614174017",
+  "titre": "الأيام",
+  "description": "سيرة ذاتية للكاتب المصري طه حسين.",
+  "auteur": "طه حسين",
+  "image": "..\\..\\uploads\\al_ayyam.png",
+  "__v": 0
+},
+{
+  "_id": "6633c1d88e70b8bd25237766",
+  "ObjectId": "04e63f54-bb32-4cc9-8f27-2a3cfe5aeb94",
+  "code": "j23e4567-e89b-12d3-a456-426614174018",
+  "titre": "الشعر الجاهلي",
+  "description": "مجموعة من القصائد التي تعود إلى العصر الجاهلي.",
+  "auteur": "جمع وتحقيق",
+  "image": "..\\..\\uploads\\alshi3r_aljahili.png",
+  "__v": 0
+},
+{
+  "_id": "6633c1d88e70b8bd25237767",
+  "ObjectId": "04e63f54-bb32-4cc9-8f27-2a3cfe5aeb95",
+  "code": "k23e4567-e89b-12d3-a456-426614174019",
+  "titre": "الأجنحة المتكسرة",
+  "description": "رواية لجبران خليل جبران.",
+  "auteur": "جبران خليل جبران",
+  "image": "..\\..\\uploads\\alajn7a_almutakassira.png",
+  "__v": 0
+}]
